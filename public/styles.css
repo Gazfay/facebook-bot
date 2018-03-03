@@ -1,0 +1,149 @@
+html, body {
+  height: 100%;
+}
+
+
+.wrapper {
+  padding-top: 50px;
+  position: relative;
+  height: 100%;
+}
+
+.loader-app-wrapper {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.loader-app {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+}
+
+.loader-smile-wrapper {
+  display: none;
+  background-color: #fff;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.loader-smile {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+}
+
+.preview, .loader-list {
+  text-align: center;
+  color: black;
+  margin-top: 20px;
+}
+
+.smile {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.smile img {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.text-input {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  padding-bottom: 0;
+  background-color: #fff;
+  z-index: 500;
+}
+
+.no-data {
+  padding-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.action-buttons {
+  text-align: center;
+  width: 100%;
+}
+
+.action-buttons button {
+  margin: 0 5px;
+}
+
+
+/* spinner styles ********/
+
+.spinner {
+  margin: 0 auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}

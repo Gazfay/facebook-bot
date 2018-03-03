@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Smile Bot</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+          (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'Messenger'));
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) { return; }
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        </script>
+    </head>
+    <body>
+      <div class="wrapper">
+        <div class='text-input'>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control find-input" placeholder="Smile name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary call-smiles" type="button">Find</button>
+            </div>
+          </div>
+        </div>
+        <div class="updates"></div>
+        <h4 class="preview">
+          Find your smile.
+        </h4>
+        <div class="loader-app-wrapper" style="display: block;"></div>
+        <div class="spinner loader-app" style="display: block;">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+        <div class="loader-smile-wrapper"></div>
+        <div class="spinner loader-smile">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+      <script src="index.js"></script>
+      <script id="template" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="row">
+             {{#if list}}
+                {{#each list}}
+                  {{#each this}}
+                    <div class="col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 smile">
+                      <img class="shared-image" src={{this}} data-url={{this}}/>
+                    </div>
+                    <div class="action-buttons">
+                      <button type="button" class="btn btn-primary send-button">Send</button>
+                      <button type="button" class="btn btn-success call-smiles">Refresh</button>
+                    </div>
+                  {{/each}}
+                {{/each}}
+              {{else}}
+                <div class="no-data">
+                  <h4>Sorry, we didn't find smile. Try another...</h4>
+                </div>
+              {{/if}}
+          </div>
+        </div>
+       </script>
+    </body>
+</html>
+
+<!-- 
+        <div class="wrapper">
+          <div id="msg"></div>
+            <div>
+
+                <div class="fb-send-to-messenger"
+                  messenger_app_id="MY_APP_ID"
+                  page_id="MY_PAGE_ID"
+                  data-ref="PASS_THROUGH_PARAM"
+                  color="blue"
+                  size="xlarge">
+                  Hello
+                </div>
+                <p>Powered by <a href="https://botkit.ai/">Botkit</a></p>
+            </div>
+        </div>
+ -->
