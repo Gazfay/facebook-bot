@@ -35,7 +35,7 @@ module.exports = function(webserver, controller) {
                                "buttons":[
                                     {
                                       "type": "web_url", 
-                                      "url": "https://768cdd39.ngrok.io/",  // button with type url on web-view
+                                      "url": "https://facebook-chat-extension.herokuapp.com/",  // button with type url on web-view
                                       "title": "Find smile again",
                                       messenger_extensions: true,
                                       webview_height_ratio: 'tall',

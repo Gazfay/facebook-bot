@@ -5,11 +5,11 @@ var debug = require('debug')('botkit:thread_settings');
 module.exports = function(controller) {
 
     debug('Configuring Facebook thread settings...');
-    controller.api.thread_settings.greeting('Hello! I\'m a Botkit bot!');
+    controller.api.thread_settings.greeting('Hello! I\'m a Smile bot!');
     controller.api.thread_settings.get_started('sample_get_started_payload');
-    controller.api.messenger_profile.domain_whitelist(['https://768cdd39.ngrok.io/', 'https://lorempixel.com/']);
+    controller.api.messenger_profile.domain_whitelist(['https://facebook-chat-extension.herokuapp.com/']);
     controller.api.messenger_profile.home_url({
-        url: 'https://768cdd39.ngrok.io/',
+        url: 'https://facebook-chat-extension.herokuapp.com/',
         webview_height_ratio: 'tall',
         in_test: false
     })
